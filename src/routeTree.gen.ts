@@ -31,7 +31,6 @@ import { Route as ClerkauthRouteImport } from './routes/clerk/(auth)/route'
 import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings/route'
 import { Route as AuthenticatedUsersIndexImport } from './routes/_authenticated/users/index'
 import { Route as AuthenticatedTasksIndexImport } from './routes/_authenticated/tasks/index'
-import {Route as AuthenticatedRequestVendorImport} from './routes/_authenticated/request-vendors/index'
 import { Route as AuthenticatedSettingsIndexImport } from './routes/_authenticated/settings/index'
 import { Route as AuthenticatedRequestVendorsIndexImport } from './routes/_authenticated/request-vendors/index'
 import { Route as AuthenticatedHelpCenterIndexImport } from './routes/_authenticated/help-center/index'
@@ -108,7 +107,7 @@ const authSignUpRoute = authSignUpImport.update({
 
 const authSignIn2Route = authSignIn2Import.update({
   id: '/(auth)/sign-in-2',
-  path: '/registration-vendor-company',
+  path: '/sign-in-2',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -120,7 +119,7 @@ const authSignInRoute = authSignInImport.update({
 
 const authRegistration1Route = authRegistration1Import.update({
   id: '/(auth)/registration1',
-  path: '/registration-vendor',
+  path: '/registration1',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -163,12 +162,6 @@ const AuthenticatedUsersIndexRoute = AuthenticatedUsersIndexImport.update({
 const AuthenticatedTasksIndexRoute = AuthenticatedTasksIndexImport.update({
   id: '/tasks/',
   path: '/tasks/',
-  getParentRoute: () => AuthenticatedRouteRoute,
-} as any)
-
-const AuthenticatedRequestVendorRoute = AuthenticatedRequestVendorImport.update({
-  id: '/request-vendors/',
-  path: '/request-vendors/',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 
@@ -474,13 +467,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedTasksIndexImport
       parentRoute: typeof AuthenticatedRouteImport
     }
-    '/_authenticated/request-vendors/': {
-      id: '/_authenticated/request-vendors/'
-      path: '/request-vendors'
-      fullPath: '/request-vendors'
-      preLoaderRoute: typeof AuthenticatedRequestVendorImport
-      parentRoute: typeof AuthenticatedRouteImport
-    }
     '/_authenticated/users/': {
       id: '/_authenticated/users/'
       path: '/users'
@@ -615,7 +601,6 @@ export interface FileRoutesByFullPath {
   '/request-vendors': typeof AuthenticatedRequestVendorsIndexRoute
   '/settings/': typeof AuthenticatedSettingsIndexRoute
   '/tasks': typeof AuthenticatedTasksIndexRoute
-  '/request-vendors' : typeof AuthenticatedRequestVendorRoute
   '/users': typeof AuthenticatedUsersIndexRoute
 }
 
@@ -647,7 +632,6 @@ export interface FileRoutesByTo {
   '/request-vendors': typeof AuthenticatedRequestVendorsIndexRoute
   '/settings': typeof AuthenticatedSettingsIndexRoute
   '/tasks': typeof AuthenticatedTasksIndexRoute
-    '/request-vendors' : typeof AuthenticatedRequestVendorRoute
   '/users': typeof AuthenticatedUsersIndexRoute
 }
 
@@ -684,7 +668,6 @@ export interface FileRoutesById {
   '/_authenticated/request-vendors/': typeof AuthenticatedRequestVendorsIndexRoute
   '/_authenticated/settings/': typeof AuthenticatedSettingsIndexRoute
   '/_authenticated/tasks/': typeof AuthenticatedTasksIndexRoute
-   '/_authenticated/request-vendors/': typeof AuthenticatedRequestVendorRoute
   '/_authenticated/users/': typeof AuthenticatedUsersIndexRoute
 }
 

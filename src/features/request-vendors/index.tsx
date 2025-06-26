@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-console */
 import React, { useState } from 'react';
-import { Check, X, Eye, MapPin, FileText, CreditCard, Building, Phone, Mail, Calendar, User } from 'lucide-react';
+import { Check, X, Eye, Building, Calendar, } from 'lucide-react';
 
 const RequestVendor = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -59,15 +61,15 @@ const RequestVendor = () => {
     }
   ];
 
-  const handleApprove = (vendorId) => {
+  const handleApprove = (vendorId:any) => {
     console.log(`Approved vendor ${vendorId}`);
   };
 
-  const handleReject = (vendorId) => {
+  const handleReject = (vendorId:any) => {
     console.log(`Rejected vendor ${vendorId}`);
   };
 
-  const openImageModal = (imageUrl) => {
+  const openImageModal = (imageUrl:any) => {
     setSelectedImage(imageUrl);
   };
 
@@ -75,11 +77,11 @@ const RequestVendor = () => {
     setSelectedImage(null);
   };
 
-  const toggleCardExpansion = (cardId) => {
+  const toggleCardExpansion = (cardId:any) => {
     setExpandedCard(expandedCard === cardId ? null : cardId);
   };
 
-  const formatDate = (dateString) => {
+  const formatDate = (dateString:any) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',

@@ -183,7 +183,7 @@ const handleSubmit = useCallback(async () => {
 
     console.log('Profile created successfully:', response.data);
 if(response.status==200){
-    navigate({to: "/registration-vendor-company"})
+    navigate({to: "/sign-in-2"})
 }
     // Optionally redirect or reset form
   } catch (error: any) {
